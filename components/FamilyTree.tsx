@@ -327,7 +327,9 @@ const forcedRoot = useMemo(() => {
           }}
         >
           <ul>
-            {roots.map((root) => (
+           
+            {forcedRoot.map((root) => (
+            
               <React.Fragment key={root.id}>
                 {renderTreeNode(root.id)}
               </React.Fragment>
