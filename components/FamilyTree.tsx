@@ -185,6 +185,16 @@ export default function FamilyTree({
     );
   };
 
+// Force root = Nguyễn Văn Đá
+const forcedRoot = useMemo(() => {
+  const found = Array.from(personsMap.values()).find(
+    (p) => p.full_name?.toLowerCase().includes("nguyễn văn đá")
+  );
+
+  return found ? [found] : roots;
+}, [personsMap, roots]);
+
+  
   if (roots.length === 0)
     return (
       <div className="text-center p-10 text-stone-500">
