@@ -39,7 +39,14 @@ export function DashboardProvider({ children }: { children: React.ReactNode }) {
     if (viewParam) setViewState(viewParam);
 
     const rootIdParam = searchParams.get("rootId");
-    if (rootIdParam) setRootIdState(rootIdParam);
+
+if (rootIdParam) {
+  setRootIdState(rootIdParam);
+} else {
+  // ID của Nguyễn Văn Đá
+  setRootIdState("ID_NGUYEN_VAN_DA");
+}
+    
 
     // We intentionally ignore memberModalId in the Next.js router loop
     // to avoid Next.js triggering re-renders on push.
